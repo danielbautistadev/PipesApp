@@ -7,7 +7,8 @@ import { MenuItem } from 'primeng/api';
   styles: ``
 })
 export class MenuComponent {
-  public items: MenuItem[] | undefined;
+  
+  public items: MenuItem[] | undefined; // Declaramos una propiedad 'items' de tipo 'MenuItem[]' o 'undefined' para almacenar los elementos del menú.
 
   ngOnInit() {
       this.items = [
