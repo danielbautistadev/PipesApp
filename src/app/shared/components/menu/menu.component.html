@@ -5,3 +5,20 @@
     <!-- <img src="./favicon.ico" alt="Logo de Angular" width="32"> -->
     <span class="pi pi-github" style="font-size: 32px; margin-right: 15px;"></span>
 </p-menubar>
+
+<!-- <p-menubar [model]="items">
+    <ng-template pTemplate="item" let-item>
+        <ng-container>
+            <a [routerLink]="item.route" class="p-menuitem-link">
+                <span [class]="item.icon" style="margin-right: 12px;"></span>
+                <span class="ml-2">{{ item.label }}</span>
+            </a>
+        </ng-container>
+    </ng-template>
+</p-menubar> -->
+
+<!-- 
+Notas Importantes: 
+1. La linea 10 `<ng-template pTemplate="item" let-item>` es una plantilla de Angular que se utiliza para personalizar la apariencia de los elementos del menú. La directiva `pTemplate="item"` indica que esta plantilla se utilizará para cada elemento del menú. La variable `let-item` se utiliza para hacer referencia al objeto que representa el elemento del menú actual en la plantilla.
+2. La linea 12 `<a [routerLink]="item.route" class="p-menuitem-link">` es un enlace de navegación de Angular que utiliza la propiedad `routerLink` para navegar a la ruta especificada en el objeto del elemento del menú. Donde "item.route" es la propiedad que contiene la ruta del enlace del menú. Esta ruta se utiliza para navegar a la página correspondiente cuando se hace clic en el elemento del menú. La clase "p-menuitem-link" se utiliza para aplicar estilos al enlace.
+-->
