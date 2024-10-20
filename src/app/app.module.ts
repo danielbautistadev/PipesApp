@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 import { SharedModule } from './shared/shared.module';
 
+// el objetivo de este modulo es importar los componentes que se van a usar en toda la aplicación, en este caso solo importamos el SharedModule que contiene los componentes que se van a usar en toda la aplicación
 
 @NgModule({
   declarations: [

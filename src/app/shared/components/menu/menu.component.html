@@ -1,5 +1,7 @@
 <!-- La sintaxis de los corchetes sirven para enlazar una propiedad de un componente con una expresión de Angular. En este caso, la propiedad "model" del componente "p-menubar" se está enlazando con la variable "items" en el contexto del componente. Esto significa que el valor de la variable "items" se pasará como entrada al componente "p-menubar" y se utilizará para construir el menú de navegación. --> 
+
+<!-- El funcionamiento de este componente es proporcionar una interfaz de menú de navegación en la aplicación web. La variable "items" probablemente contiene un array de objetos que representan los elementos del menú, como páginas, enlaces o submenús. Cada objeto en el array tiene propiedades como "label" (el texto que se muestra en el menú), "icon" (un icono opcional), "url" (la dirección URL a la que se redirige cuando se hace clic en el elemento del menú), y "items" (un array de objetos que representan los elementos del submenú, si los hay). -->
 <p-menubar [model]="items">
     <!-- <img src="./favicon.ico" alt="Logo de Angular" width="32"> -->
-    <span class="pi pi-github" style="font-size: 32px;"></span>
+    <span class="pi pi-github" style="font-size: 32px; margin-right: 15px;"></span>
 </p-menubar>
