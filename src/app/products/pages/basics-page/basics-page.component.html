@@ -1,1 +1,142 @@
-<p>basics-page works!</p>
+<!-- El componente 'p-panel' de primeNg se utiliza para crear paneles con encabezados y contenido colapsable. En este ejemplo, se ha creado un panel con el encabezado "Header" y el contenido "Pipes incluidos en Angular - Usualmente en el Common Module". El atributo 'toggleable' se establece en 'true' para permitir que el usuario colapse y expanda el panel haciendo clic en el encabezado. -->
+
+<div class="card flex justify-content-center m-3">
+    <p-panel header="Pipes en Angular" [toggleable]="true">
+        <h2>Pipes incluidos en Angular - Usualmente en el Common Module</h2>
+        <p>Los <strong>Pipes en Angular</strong> son funciones que permiten transformar los datos de una manera fácil y declarativa directamente en las plantillas HTML. Los Pipes se usan cuando necesitas formatear, modificar o transformar datos antes de mostrarlos en la vista. </p>
+    </p-panel>
+</div>
+<div class="grid">
+    <!-- El componente 'p-card' de primeNg se utiliza para crear tarjetas con encabezados y contenido. En este ejemplo, se han creado tarjetas para mostrar la funcionalidad de diferentes pipes incluidos en Angular. Cada tarjeta tiene un encabezado que indica el nombre del pipe y un párrafo que describe su funcionalidad. Luego, se muestra un ejemplo de cómo usar el pipe en una expresión de Angular. -->
+    <div class="col-4">
+        <p-card header="LowerCasePipe" [style]="{'margin': '0 10px'}">
+            <p class="m-0">
+                Transforma el texto a minúsculas.
+            </p>
+            <div class="example-1" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
+                {{ lastname | lowercase }} <!-- Esto transformará el valor de 'lastname' a minúsculas. -->
+            </div>
+        </p-card>    
+    </div>
+    <div class="col-4">
+        <p-card header="TitleCasePipe">
+            <p class="m-0">
+                Transforma el texto en mayúsculas y minúsculas.
+            </p>
+            <div class="example-1" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
+                {{ address | titlecase }} <!-- Esto transformará el valor de 'address' en mayúsculas y minúsculas. -->
+            </div>
+        </p-card>    
+    </div>
+    <div class="col-4">
+        <p-card header="UpperCasePipe" [style]="{'margin': '0 10px'}">
+            <p class="m-0">
+                Transforma el texto a mayúsculas.
+            </p>
+            <div class="example-1" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
+                {{ fullname | uppercase }} <!-- Esto transformará el valor de 'fullname' a mayúsculas. -->
+            </div>
+        </p-card>    
+    </div>
+    <div class="col-12">
+        <p-card header="DatePipe" [style]="{'margin': '0 5px'}">
+            <p class="m-0">
+                Formatea un valor de fecha <strong>(Date)</strong> según las reglas locales.
+            </p>
+            <div class="example-1" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
+                Fecha actual Completa: {{ today }} <!-- Esto mostrará la fecha actual en el formato predeterminado. -->
+            </div>
+            <div class="example-2" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
+                Fecha actual completa con formato personalizado: {{ today | date: 'full' }} <!-- Esto mostrará la fecha actual en un formato completo. -->
+            </div>
+            <div class="example-3" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
+                Fecha completa de cumpleaños: {{ birhtday | date: 'fullDate' }} <!-- Esto mostrará la fecha de nacimiento en un formato personalizado. -->
+            </div>
+            <div class="example-4" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
+                Hora media de cumpleaños: {{ birhtday | date: 'mediumTime' }} <!-- Esto mostrará la hora de nacimiento en un formato medio. -->
+            </div>
+        </p-card>    
+    </div>
+    <div class="col-12">
+        <p-card header="DatePipe" [style]="{'margin': '0 5px'}">
+            <table>
+                <caption>Formatos de Fechas</caption>
+                <thead>
+                    <tr>
+                        <th>Fecha actual del Sistema</th>
+                        <th>Fecha Corta</th>
+                        <th>Fecha Media</th>
+                        <th>Fecha Larga</th>
+                        <th>Fecha Completa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ today }} <!-- Esto mostrará la fecha actual en el formato predeterminado. --></td>
+                        <td>{{ today | date: 'short' }}</td> <!-- Esto mostrará la fecha actual en un formato corto. -->
+                        <td>{{ today | date: 'medium' }}</td> <!-- Esto mostrará la fecha actual en un formato medio. -->
+                        <td>{{ today | date: 'long' }}</td> <!-- Esto mostrará la fecha actual en un formato largo. -->
+                        <td>{{ today | date: 'full' }}</td> <!-- Esto mostrará la fecha actual en un formato completo. -->
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <caption>Formatos de Horas</caption>
+                <thead>
+                    <tr>
+                        <th>Hora Corta</th>
+                        <th>Hora Media</th>
+                        <th>Hora Larga</th>
+                        <th>Hora Completa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ today | date: 'shortTime' }} <!-- Esto mostrará la hora actual en un formato corto. --></td>
+                        <td>{{ today | date: 'mediumTime' }} <!-- Esto mostrará la hora actual en un formato medio. --></td>
+                        <td>{{ today | date: 'longTime' }} <!-- Esto mostrará la hora actual en un formato largo. --></td>
+                        <td>{{ today | date: 'fullTime' }} <!-- Esto mostrará la hora actual en un formato completo. --></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <caption>Formatos de Zonas Horarias</caption>
+                <thead>
+                    <tr>
+                        <th>Hora Larga actual con Zona Horaria</th> <!-- Esto mostrará la hora actual en un formato largo con la zona horaria del sistema. -->
+                        <th>Hora Larga con Zona Horaria</th> <!-- Esto mostrará la hora actual en un formato largo con la zona horaria especificada. -->
+                        <th>Hora Larga con Zona Horaria</th> <!-- Esto mostrará la hora actual en un formato largo con otra zona horaria especificada. -->
+                        <th>Hora Larga con Zona Horaria - Colombia</th> <!-- Esto mostrará la hora actual en un formato largo con la zona horaria de Colombia. -->
+                        <th>Hora Larga con Zona Horaria - Estados Unidos</th> <!-- Esto mostrará la hora actual en un formato largo con la zona horaria de Estados Unidos. -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ today | date: 'full' }}</td>
+                        <td>{{ today | date: 'full':'GMT-6' }}</td>
+                        <td>{{ today | date: 'full':'GMT-8' }}</td>
+                        <td>{{ today | date: 'full':'':'es-CO' }}</td> <!-- Esto mostrará la hora actual en un formato largo con la zona horaria de Colombia. -->
+                        <td>{{ today | date: 'full':'':'en-US'}}</td> <!-- Esto mostrará la hora actual en un formato largo con la zona horaria de Estados Unidos. -->                   
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <caption>Formatos de Zonas Horarias</caption>
+                <thead>
+                    <tr>
+                        <th>Hora Larga con Zona Horaria - Francia</th> <!-- Esto mostrará la hora actual en un formato largo con la zona horaria de Francia. -->
+                        <th>Hora Larga con Zona Horaria - Japón</th> <!-- Esto mostrará la hora actual en un formato largo con la zona horaria de Japón. -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ today | date: 'full':'':'fr-FR' }}</td> <!-- Esto mostrará la hora actual en un formato largo con la zona horaria de Francia. -->
+                        <td>{{ today | date: 'full':'':'ja-JP' }}</td> <!-- Esto mostrará la hora actual en un formato largo con la zona horaria de Japón. -->                    
+                    </tr>
+                </tbody>
+            </table>
+        </p-card>    
+    </div>
+    
+</div>
+
