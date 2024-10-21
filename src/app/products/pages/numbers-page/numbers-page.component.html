@@ -1,1 +1,77 @@
-<p>numbers-page works!</p>
+<div class="card flex justify-content-center m-3">
+    <p-panel header="Pipes en Angular" [toggleable]="true">
+        <h2>Pipes incluidos en Angular - Usualmente en el Common Module</h2>
+        <p>Los <strong>Pipes en Angular</strong> son funciones que permiten transformar los datos de una manera fácil y declarativa directamente en las plantillas HTML. Los Pipes se usan cuando necesitas formatear, modificar o transformar datos antes de mostrarlos en la vista. </p>
+    </p-panel>
+</div>
+<div class="grid">
+    <div class="col-4">
+        <p-card header="DecimalPipes" [style]="{'margin': '0 10px', 'text-align':'justify'}">
+            <p class="m-0">
+                Los DecimalPipes se utilizan para formatear números decimales en una representación específica. Puedes controlar el número de decimales, el separador decimal y el separador de miles. Aquí tienes un ejemplo de cómo usarlo: 
+            </p>
+            <div class="example-1" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
+                <p>Precio sin formato: {{ precio }}</p>
+                <p style="font-size: 18px; font-weight: 700;">Precio formateado: {{ precio | number: '1.2-2'}}</p> 
+                <!-- Explicación:
+                1. '1.2-2' significa que el número tendrá al menos 1 dígito antes del punto decimal, 2 dígitos después del punto decimal y como máximo 2 dígitos después del punto decimal.
+                -->
+            </div>
+        </p-card>    
+    </div>
+    <div class="col-4">
+        <p-card header="CurrencyPipes" [style]="{'margin': '0 10px', 'text-align':'justify'}">
+            <p class="m-0">
+                Los CurrencyPipes se utilizan para formatear números como monedas. Puedes especificar el código de la moneda, el símbolo de la moneda y el formato de la moneda. Aquí tienes un ejemplo de cómo usarlo:
+            </p>
+            <div class="example-1" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
+                <p>Ejemplo con USD (Dolar Americano)</p>
+                <p>Precio en USD: {{ precio | currency:'':'symbol-narrow':'1.2-2' }}</p>
+            </div>
+            <div class="example-2" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
+                <p>Ejemplo con PEN (Soles Peruanos)</p>
+                <p>Precio en PEN: {{ precio | currency:'PEN':'code':'1.2-2' }}</p>
+            </div>
+            <!-- Explicacion: 
+                1. 'USD' o 'PEN' es el código de la moneda. Puedes usar cualquier código de moneda válido.
+                2. 'symbol' es el estilo de formato de la moneda. Puedes usar 'symbol', 'code' o 'symbol-narrow'. El valor 'symbol' muestra el símbolo de la moneda, 'code' muestra el código de la moneda y 'symbol-narrow' muestra el símbolo de la moneda en un formato más compacto.
+                3. '1.0-2' es el formato de número. '1' es el número de dígitos enteros, '0' es el número mínimo de dígitos decimales y '2' es el número máximo de dígitos decimales.
+            -->
+        </p-card>    
+    </div>
+    <div class="col-4">
+        <p-card header="PercentPipes" [style]="{'margin': '0 10px', 'text-align':'justify'}">
+            <p class="m-0">
+                Los PercentPipes se utilizan para formatear números como porcentajes. Puedes especificar el número de decimales y el símbolo del porcentaje. Aquí tienes un ejemplo de cómo usarlo:
+            </p>
+            <div class="example-1" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
+                <p>Porcentaje sin formato: {{ porcentaje }}</p>
+                <p style="background-color: rgb(149, 255, 0); color: black; padding: 8px; font-weight: 700; font-size: 18px;">Descuento: {{ porcentaje | percent:'1.0-2' }}</p> 
+                <!-- Explicación: 
+                 1. '1.0-2' significa que el número tendrá al menos 1 dígito antes del punto decimal, 0 dígitos después del punto decimal y como máximo 2 dígitos después del punto decimal. 
+                -->
+            </div>
+        </p-card>    
+    </div>
+    <div class="col-12">
+        <p-card header="Ejemplo Practico" [style]="{'margin': '0 10px', 'text-align':'justify'}">
+            <p class="m-0">
+                Imagina que estas construyendo una pagina de productos. Aquí tienes un ejemplo de cómo usar estos pipes juntos para mostrar el precio de un producto con descuento en diferentes monedas y el porcentaje de descuento aplicado.
+            </p>
+            <div class="example-1" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
+                <h2>Detalles del Producto</h2>
+                <p>Nombre del Producto: {{ name_prod }}</p>
+                <p>Precio original: {{ precio | currency:'USD':'symbol':'1.0-2' }}</p> 
+                <p>Descuento aplicado: {{ 0.10 | percent:'1.0-2' }}</p>
+                <p>Precio final: {{ precio * ( 1 - 0.10 ) | currency:'USD':'symbol-narrow':'1.0-2' }}</p>
+                <!-- Explicacion:
+                1. 0.10 es el descuento aplicado, puedes cambiar este valor para aplicar diferentes descuentos.
+                2. precio * ( 1 - 0.10 ) calcula el precio final después de aplicar el descuento. Puedes cambiar 'USD' por 'PEN' para mostrar el precio en soles peruanos.
+                3. '1.0-2' es el formato de número para el precio y el porcentaje. Puedes cambiar estos valores para mostrar más o menos decimales.
+                4. 'symbol' es el estilo de formato de la moneda. Puedes cambiarlo por 'code' o 'symbol-narrow' para mostrar el código de la moneda o el símbolo en un formato más compacto, respectivamente.
+                -->
+            </div>
+        </p-card>    
+    </div>
+
+</div>
