@@ -1,1 +1,48 @@
-<p>uncommon-page works!</p>
+<div class="card flex justify-content-center" style="margin: 20px 0;">
+    <p-panel header="Pipes no comunes en Angular" [toggleable]="true">
+        <h2>Pipes no comunes en Angular</h2>
+        <p>Angular proporciona una serie de pipes integrados para realizar transformaciones comunes en los datos. Estos pipes se encuentran en el módulo CommonModule y están disponibles para su uso en toda la aplicación. Sin embargo, hay algunos pipes no comunes que no se incluyen en el CommonModule y que deben ser importados y agregados manualmente a los módulos específicos donde se desean utilizar.</p>
+    </p-panel>
+</div>
+<div class="grid">
+    <div class="col-6">
+        <p-fieldset legend="Pipe: KeyValuePipe" [toggleable]="true">
+            <p>El KeyValuePipe se utiliza para iterar sobre las propiedades de un objeto y obtener tanto la clave como el valor de cada propiedad. Esto es útil cuando se desea mostrar los datos de un objeto en una tabla o en una lista.</p>
+        </p-fieldset>
+    </div>
+    <div class="col-6">
+        <p-fieldset legend="Pipe: Async" [toggleable]="true">
+            <p>El AsyncPipe se utiliza para suscribirse a un Observable y mostrar automáticamente los valores emitidos por ese Observable en la vista. Esto es útil cuando se trabaja con datos asincrónicos, como los obtenidos de una API, y se desea mostrar los datos en la vista sin tener que escribir código adicional para la suscripción y la actualización de los datos.</p>
+        </p-fieldset>
+    </div>
+    <div class="col-6">
+        <p-fieldset legend="Pipe: Slice" [toggleable]="true">
+            <p>El SlicePipe se utiliza para extraer una porción de un array o una cadena de texto. Esto es útil cuando se desea mostrar solo una parte de los datos en la vista, como los primeros elementos de una lista o los caracteres de una cadena de texto que se encuentran en un rango específico.</p>
+        </p-fieldset>
+    </div>
+    <div class="col-6">
+        <p-fieldset legend="Pipe: i18nSelect" [toggleable]="true">
+            <p>El i18nSelectPipe se utiliza para seleccionar una cadena de texto en función de un valor numérico o de una expresión booleana. Esto es útil cuando se desea mostrar diferentes mensajes en la vista en función de una condición, como mostrar "elemento" o "elementos" en función de la cantidad de elementos en una lista.</p>
+            <div class="example-1" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
+                <p>Hola, ¡{{ name }}! es un placer {{ gender | i18nSelect: invitationMap }} a nuestro evento.</p>
+                <p-button (onClick)="changeClient()" label="Cambiar persona"></p-button>
+                <!-- Explicación: 
+                1. {{ name }} se reemplaza con el valor de la variable name en el componente.
+                2. {{ gender | i18nSelect:invitationMap }} se utiliza para seleccionar una cadena de texto en función del valor de la variable gender. La variable invitationMap es un objeto que contiene las cadenas de texto para cada valor posible de gender. En este caso, si gender es 'male', se selecciona la cadena de texto 'invited'. Si gender es 'female', se selecciona la cadena de texto 'welcomed'. Si gender no es ni 'male' ni 'female', se selecciona la cadena de texto 'welcomed'.
+                3. (onClick)="changeClient()" se utiliza para llamar a la función changeClient() cuando se hace clic en el botón. Esta función cambia los valores de las variables name y gender para simular la selección de una persona diferente.
+                -->
+            </div>
+            <div class="example-1" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
+                <p>{{ recipientGender | i18nSelect: genderMap }}</p>
+                <!-- Explicación: 
+                1. {{ recipientGender | i18nSelect: genderMap }} se utiliza para seleccionar una cadena de texto en función del valor de la variable recipientGender. La variable genderMap es un objeto que contiene las cadenas de texto para cada valor posible de recipientGender. En este caso, si recipientGender es 'male', se selecciona la cadena de texto 'Dear Sir'. Si recipientGender es 'female', se selecciona la cadena de texto 'Dear Madam'. Si recipientGender no es ni 'male' ni 'female', se selecciona la cadena de texto 'Dear Recipient'.
+                -->
+            </div>
+        </p-fieldset>
+    </div>
+    <div class="col-6">
+        <p-fieldset legend="Pipe: i18nPlural" [toggleable]="true">
+            <p>El i18nPluralPipe se utiliza para seleccionar una cadena de texto en función de un valor numérico y de una serie de reglas de pluralización. Esto es útil cuando se desea mostrar diferentes mensajes en la vista en función de la cantidad de elementos en una lista, como "1 elemento", "2 elementos" o "5 o más elementos".</p>
+        </p-fieldset>
+    </div>
+</div>
