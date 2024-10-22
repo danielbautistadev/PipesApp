@@ -18,6 +18,23 @@
     <div class="col-6">
         <p-fieldset legend="Pipe: Slice" [toggleable]="true">
             <p>El SlicePipe se utiliza para extraer una porción de un array o una cadena de texto. Esto es útil cuando se desea mostrar solo una parte de los datos en la vista, como los primeros elementos de una lista o los caracteres de una cadena de texto que se encuentran en un rango específico.</p>
+            <div class="example-1" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
+                <p><strong>Lista de frutas (Original): </strong></p>
+                <p>{{ fruits }}</p>
+                <hr>
+                <p><strong>Slice:0:2: </strong></p>
+                <p>{{ fruits | slice:0:2 }}</p>
+                <hr>
+                <p><strong>Slice:1:3: </strong></p>
+                <p>{{ fruits | slice:1:3 }}</p>
+                <hr>
+                <p><strong>Slice:0:-2</strong></p>
+                <p>{{ fruits | slice:0:-2 }}</p>
+                <!-- Explicación: 
+                1. {{ fruits }} se reemplaza con el valor del array fruits en el componente.
+                2. El pipe slice se utiliza para extraer una porción del array fruits. Los índices 0:2 extraen los primeros dos elementos del array, los índices 1:3 extraen los elementos en las posiciones 1 y 2, y los índices 0:-2 extraen todos los elementos excepto los dos últimos.
+                -->
+            </div>
         </p-fieldset>
     </div>
     <div class="col-6">

@@ -41,6 +41,6 @@ export class UncommonPageComponent {
     this.clients.shift(); // Se declara un método que elimina el primer elemento del array clients
   }
 
-  
+  public fruits: string[] = ['manzana', 'pera', 'plátano', 'naranja', 'fresa', 'sandía', 'melón', 'piña', 'uva', 'mango', 'kiwi', 'cereza', 'limón', 'mandarina', 'granada', 'durazno', 'ciruela', 'higo', 'frambuesa', 'arándano']; // Se declara un array de tipo string y se le asignan valores
 
 }
