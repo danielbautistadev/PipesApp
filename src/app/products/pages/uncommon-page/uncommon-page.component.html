@@ -8,11 +8,25 @@
     <div class="col-6">
         <p-fieldset legend="Pipe: KeyValuePipe" [toggleable]="true">
             <p>El KeyValuePipe se utiliza para iterar sobre las propiedades de un objeto y obtener tanto la clave como el valor de cada propiedad. Esto es útil cuando se desea mostrar los datos de un objeto en una tabla o en una lista.</p>
+            <div class="example-1" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; margin-top: 10px;">
+                <ul>
+                    <li *ngFor="let item of person | keyvalue">
+                        <b>{{ item.key | titlecase }}</b> : {{ item.value }}
+                    </li>
+                </ul>
+                <!-- Explicacion: 
+                1. El objeto "person" se pasa al pipe KeyValuePipe, que lo convierte en un array de objetos con las propiedades "key" y "value".
+                2. Luego, se utiliza el bucle *ngFor para iterar sobre este array y mostrar cada propiedad y su valor en un elemento de lista (li).
+                3. La propiedad "key" se muestra en negrita y la propiedad "value" se muestra en texto normal.
+                4. El pipe TitleCase se utiliza para convertir la primera letra de cada palabra en la propiedad "key" en mayúscula.
+                -->
+            </div>
         </p-fieldset>
     </div>
     <div class="col-6">
         <p-fieldset legend="Pipe: Async" [toggleable]="true">
             <p>El AsyncPipe se utiliza para suscribirse a un Observable y mostrar automáticamente los valores emitidos por ese Observable en la vista. Esto es útil cuando se trabaja con datos asincrónicos, como los obtenidos de una API, y se desea mostrar los datos en la vista sin tener que escribir código adicional para la suscripción y la actualización de los datos.</p>
+            
         </p-fieldset>
     </div>
     <div class="col-6">
@@ -20,7 +34,7 @@
             <p>El SlicePipe se utiliza para extraer una porción de un array o una cadena de texto. Esto es útil cuando se desea mostrar solo una parte de los datos en la vista, como los primeros elementos de una lista o los caracteres de una cadena de texto que se encuentran en un rango específico.</p>
             <div class="example-1" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
                 <p><strong>Lista de frutas (Original): </strong></p>
-                <p>{{ fruits }}</p>
+                <pre>{{ fruits }}</pre>
                 <hr>
                 <p><strong>Slice:0:2: </strong></p>
                 <p>{{ fruits | slice:0:2 }}</p>
@@ -68,6 +82,19 @@
             1. {{ clients.length | i18nPlural:clientsMap }} se utiliza para seleccionar una cadena de texto en función de la longitud de la matriz clients. La variable clientsMap es un objeto que contiene las reglas de pluralización y las cadenas de texto correspondientes. En este caso, si la longitud de la matriz clients es 0, se selecciona la cadena de texto '=0 {no hay clientes}'. Si la longitud de la matriz clients es 1, se selecciona la cadena de texto '=1 {hay un cliente}'. Si la longitud de la matriz clients es mayor que 1, se selecciona la cadena de texto 'other {hay # clientes}'. La cadena '#' se reemplaza con el valor de la longitud de la matriz clients. Si no se proporciona una regla para el valor de la longitud de la matriz clients, se selecciona la cadena de texto 'other'.
             2. (click)="deleteClient()" se utiliza para llamar a la función deleteClient() cuando se hace clic en el botón. Esta función elimina el último elemento de la matriz clients para simular la eliminación de un cliente.
             -->
+        </p-fieldset>
+    </div>
+    <div class="col-6">
+        <p-fieldset legend="Pipe: Json" [toggleable]="true">
+            <p>El JsonPipe se utiliza para formatear un objeto JavaScript como una cadena JSON. Esto es útil cuando se desea mostrar los datos de un objeto en un formato legible por humanos o cuando se desea enviar los datos a un servidor en formato JSON.</p>
+            <div class="example-1" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; margin-top: 10px;">
+                <pre>
+                    {{ person | json }}
+                </pre>
+                <!-- Explicación: 
+                1. {{ person | json }} se utiliza para formatear el objeto person como una cadena JSON. La cadena JSON resultante se muestra dentro de una etiqueta <pre> para preservar el formato de la cadena JSON. La propiedad person es un objeto JavaScript que contiene información sobre una persona, como su nombre, edad y dirección. Al utilizar el JsonPipe, se puede ver fácilmente la estructura del objeto y los valores de sus propiedades.
+                -->
+            </div>
         </p-fieldset>
     </div>
 </div>

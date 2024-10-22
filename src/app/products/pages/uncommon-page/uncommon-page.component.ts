@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { last } from 'rxjs';
 
 @Component({
   selector: 'app-uncommon-page',
@@ -42,5 +43,14 @@ export class UncommonPageComponent {
   }
 
   public fruits: string[] = ['manzana', 'pera', 'plátano', 'naranja', 'fresa', 'sandía', 'melón', 'piña', 'uva', 'mango', 'kiwi', 'cereza', 'limón', 'mandarina', 'granada', 'durazno', 'ciruela', 'higo', 'frambuesa', 'arándano']; // Se declara un array de tipo string y se le asignan valores
+
+  // JsonPipe
+  public person = { 
+    name: 'Daniel',
+    lastName: 'Bautista Olano',
+    age: 33,
+    email: 'danielbautistaolano@gmail.com',
+    address: 'Calle 123, Ciudad, País'
+  } // Se declara un objeto con propiedades de tipo string y number y se le asigna un valor a cada una, en este caso se usa un objeto para mostrar los datos de una persona en el HTML, se usa el pipe JsonPipe para mostrar los datos del objeto en formato JSON en el HTML
 
 }
