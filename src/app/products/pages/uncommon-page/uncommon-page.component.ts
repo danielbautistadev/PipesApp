@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { last } from 'rxjs';
+import { interval, Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'app-uncommon-page',
@@ -52,5 +52,20 @@ export class UncommonPageComponent {
     email: 'danielbautistaolano@gmail.com',
     address: 'Calle 123, Ciudad, País'
   } // Se declara un objeto con propiedades de tipo string y number y se le asigna un valor a cada una, en este caso se usa un objeto para mostrar los datos de una persona en el HTML, se usa el pipe JsonPipe para mostrar los datos del objeto en formato JSON en el HTML
+
+  // AsyncPipe
+
+  public myObservableTimer: Observable<number> = interval(2000).pipe(
+    tap( value => console.log('tap:', value) ), // Se declara una variable de tipo Observable y se le asigna un valor, en este caso se usa el método interval para crear un Observable que emite valores numéricos cada dos segundos, se usa el pipe tap para mostrar los valores emitidos por el Observable en la consola, se usa el pipe AsyncPipe para mostrar los valores emitidos por el Observable en el HTML
+  ); 
+
+  public promiseValue: Promise<string> = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve( "Tenemos data en la promesa." );
+      console.log( "Tenemos data en la promesa." );
+      this.person.name = 'Otro nombre';
+    }, 3500); // Se declara una variable de tipo Promise y se le asigna un valor, en este caso se usa el constructor Promise para crear una Promise que se resuelve después de tres segundos, se usa el pipe AsyncPipe para mostrar el valor resuelto por la Promise en el HTML
+  }) 
+
 
 }
