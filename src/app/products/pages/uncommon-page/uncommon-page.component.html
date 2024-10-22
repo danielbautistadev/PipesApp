@@ -32,7 +32,7 @@
                 3. (onClick)="changeClient()" se utiliza para llamar a la función changeClient() cuando se hace clic en el botón. Esta función cambia los valores de las variables name y gender para simular la selección de una persona diferente.
                 -->
             </div>
-            <div class="example-1" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
+            <div class="example-2" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
                 <p>{{ recipientGender | i18nSelect: genderMap }}</p>
                 <!-- Explicación: 
                 1. {{ recipientGender | i18nSelect: genderMap }} se utiliza para seleccionar una cadena de texto en función del valor de la variable recipientGender. La variable genderMap es un objeto que contiene las cadenas de texto para cada valor posible de recipientGender. En este caso, si recipientGender es 'male', se selecciona la cadena de texto 'Dear Sir'. Si recipientGender es 'female', se selecciona la cadena de texto 'Dear Madam'. Si recipientGender no es ni 'male' ni 'female', se selecciona la cadena de texto 'Dear Recipient'.
@@ -43,6 +43,14 @@
     <div class="col-6">
         <p-fieldset legend="Pipe: i18nPlural" [toggleable]="true">
             <p>El i18nPluralPipe se utiliza para seleccionar una cadena de texto en función de un valor numérico y de una serie de reglas de pluralización. Esto es útil cuando se desea mostrar diferentes mensajes en la vista en función de la cantidad de elementos en una lista, como "1 elemento", "2 elementos" o "5 o más elementos".</p>
+            <div class="example-1" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
+                <p>Actualmente {{ clients.length | i18nPlural:clientsMap }}</p>
+                <p-button label="Borrar cliente" (click)="deleteClient()"></p-button>
+            </div>
+            <!-- Explicación: 
+            1. {{ clients.length | i18nPlural:clientsMap }} se utiliza para seleccionar una cadena de texto en función de la longitud de la matriz clients. La variable clientsMap es un objeto que contiene las reglas de pluralización y las cadenas de texto correspondientes. En este caso, si la longitud de la matriz clients es 0, se selecciona la cadena de texto '=0 {no hay clientes}'. Si la longitud de la matriz clients es 1, se selecciona la cadena de texto '=1 {hay un cliente}'. Si la longitud de la matriz clients es mayor que 1, se selecciona la cadena de texto 'other {hay # clientes}'. La cadena '#' se reemplaza con el valor de la longitud de la matriz clients. Si no se proporciona una regla para el valor de la longitud de la matriz clients, se selecciona la cadena de texto 'other'.
+            2. (click)="deleteClient()" se utiliza para llamar a la función deleteClient() cuando se hace clic en el botón. Esta función elimina el último elemento de la matriz clients para simular la eliminación de un cliente.
+            -->
         </p-fieldset>
     </div>
 </div>
