@@ -11,6 +11,8 @@ import { Color, Hero } from '../../interfaces/hero.interface';
 export class OrderComponent implements OnInit {
   public name: string = 'erick daniel';
 
+  public orderBy?: keyof Hero; // Definimos una propiedad pública opcional que almacena una clave de la interfaz Hero, y la inicializamos en undefined. Esta propiedad se utiliza para ordenar la lista de héroes por una propiedad específica.
+
   public isUpperCase: boolean = false; // Definimos una propiedad pública que almacena un valor booleano, y lo inicializamos en false. para poder utilizarlo como argumento por el pipe toggleCase en el HTML.
 
   public heroes: Hero[] = [
@@ -40,6 +42,10 @@ export class OrderComponent implements OnInit {
       color: Color.green
     }
   ]
+
+  changeOrder(value: keyof Hero) { 
+    this.orderBy = value; // Asignamos el valor del argumento a la propiedad orderBy, para que se ordene la lista de héroes por esa propiedad.
+  }
 
   toggleUpperCase(): void {
     this.isUpperCase = !this.isUpperCase;

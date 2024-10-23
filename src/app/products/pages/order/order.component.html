@@ -25,9 +25,26 @@
                     -->
                 </div>
                 <div class="p-toolbar-group-end">
-                    <p-button label="por nombre" icon="pi pi-sort" class="mr-2" styleClass="p-button-success"/>
-                    <p-button label="por volar" icon="pi pi-sort" class="mr-2" styleClass="p-button-dawnger"/>
-                    <p-button label="por color" icon="pi pi-sort" styleClass="p-button-help"/>
+                    <p-button 
+                        label="por nombre" 
+                        icon="pi pi-sort" 
+                        class="mr-2" 
+                        styleClass="p-button-success" 
+                        (onClick)="changeOrder('name')"
+                    />
+                    <p-button 
+                        label="por volar" 
+                        icon="pi pi-sort" 
+                        class="mr-2" 
+                        styleClass="p-button-dawnger" 
+                        (onClick)="changeOrder('canFly')"
+                    />
+                    <p-button 
+                        label="por color" 
+                        icon="pi pi-sort" 
+                        styleClass="p-button-help" 
+                        (onClick)="changeOrder('color')"
+                    />
                 </div>
                 <!-- <div class="p-toolbar-group-center">
                     <span class="p-input-icon-left">
@@ -45,7 +62,8 @@
     <div class="col-12">
         <div class="card">
             <p-panel header="Héroes" [toggleable]="true">
-                <p-table [value]="heroes" [tableStyle]="{ 'min-width': '50rem' }">
+                <p-table [value]="heroes | sortBy:orderBy" [tableStyle]="{ 'min-width': '50rem' }">
+                    <!-- Explicacion: 1. [value]="heroes | sortBy:'canFly'" --> <!-- Esto significa que estamos pasando la lista de héroes a la tabla y aplicando el pipe sortBy para ordenar la lista por la propiedad 'canFly'. -->
                     <ng-template pTemplate="header">
                         <tr>
                             <th>Name</th>
