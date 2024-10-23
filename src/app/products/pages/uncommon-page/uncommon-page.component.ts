@@ -59,13 +59,13 @@ export class UncommonPageComponent {
     tap( value => console.log('tap:', value) ), // Se declara una variable de tipo Observable y se le asigna un valor, en este caso se usa el método interval para crear un Observable que emite valores numéricos cada dos segundos, se usa el pipe tap para mostrar los valores emitidos por el Observable en la consola, se usa el pipe AsyncPipe para mostrar los valores emitidos por el Observable en el HTML
   ); 
 
-  public promiseValue: Promise<string> = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve( "Tenemos data en la promesa." );
-      console.log( "Tenemos data en la promesa." );
-      this.person.name = 'Otro nombre';
-    }, 3500); // Se declara una variable de tipo Promise y se le asigna un valor, en este caso se usa el constructor Promise para crear una Promise que se resuelve después de tres segundos, se usa el pipe AsyncPipe para mostrar el valor resuelto por la Promise en el HTML
-  }) 
+  // public promiseValue: Promise<string> = new Promise((resolve, reject) => {
+    // setTimeout(() => {
+      // resolve( "Tenemos data en la promesa." );
+      // console.log( "Tenemos data en la promesa." );
+      // this.person.name = 'Otro nombre';
+    // }, 3500); // Se declara una variable de tipo Promise y se le asigna un valor, en este caso se usa el constructor Promise para crear una Promise que se resuelve después de tres segundos, se usa el pipe AsyncPipe para mostrar el valor resuelto por la Promise en el HTML
+  // }) 
 
 
 }

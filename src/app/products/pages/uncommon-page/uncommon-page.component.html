@@ -27,8 +27,9 @@
         <p-fieldset legend="Pipe: Async" [toggleable]="true">
             <p>El AsyncPipe se utiliza para suscribirse a un Observable y mostrar automáticamente los valores emitidos por ese Observable en la vista. Esto es útil cuando se trabaja con datos asincrónicos, como los obtenidos de una API, y se desea mostrar los datos en la vista sin tener que escribir código adicional para la suscripción y la actualización de los datos.</p>
             <div class="example-1" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
-                <pre *ngIf="!(myObservableTimer | async)">Resolviendo observable</pre>
-                <pre>{{ myObservableTimer | async }}</pre>
+                <p>No disponible</p>
+                <!-- <pre *ngIf="!(myObservableTimer | async)">Resolviendo observable</pre> -->
+                <!-- <pre>{{ myObservableTimer | async }}</pre> -->
                 <!-- Explicacion: 
                 1. El AsyncPipe se utiliza para suscribirse al Observable "myObservableTimer" y mostrar automáticamente los valores emitidos por ese Observable en la vista. En este caso, el Observable emite un valor cada segundo, que se muestra en la vista utilizando la interpolación de Angular ({{ }}).
                 2. El primer elemento "pre" se muestra solo si el Observable aún no ha emitido ningún valor. Una vez que el Observable emite un valor, se oculta automáticamente y se muestra el segundo elemento "pre", que muestra el valor emitido por el Observable.
@@ -37,8 +38,9 @@
                 -->
             </div>
             <div class="example-1" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
-                <pre *ngIf="!(promiseValue | async)">Resolviendo promesa</pre>
-                <pre>{{ promiseValue | async }}</pre>
+                <p>No disponible</p>
+                <!-- <pre *ngIf="!(promiseValue | async)">Resolviendo promesa</pre> -->
+                <!-- <pre>{{ promiseValue | async }}</pre> -->
                 <!-- Explicacion: 
                 1. El AsyncPipe se utiliza para suscribirse a una Promesa y mostrar automáticamente el valor resuelto por esa Promesa en la vista. En este caso, la Promesa se resuelve después de 3 segundos y devuelve una cadena de texto, que se muestra en la vista utilizando la interpolación de Angular ({{ }}).
                 2. El primer elemento "pre" se muestra solo si la Promesa aún no se ha resuelto. Una vez que la Promesa se resuelve, se oculta automáticamente y se muestra el segundo elemento "pre", que muestra el valor resuelto por la Promesa.

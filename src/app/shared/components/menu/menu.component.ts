@@ -50,8 +50,9 @@ export class MenuComponent {
             icon: 'pi pi-cog',
             items: [
               {
-                label: 'Otro elemento',
-                icon: 'pi pi-cog'
+                label: 'Custom Pipes',
+                icon: 'pi pi-cog',
+                routerLink: '/custom' // Usamos 'routerLink' para navegar a la ruta '/custom' al hacer clic en este elemento del menú.
               }
             ]
           }
