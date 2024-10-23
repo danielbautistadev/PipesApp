@@ -42,6 +42,29 @@
         </div>
     </div>
 
+    <div class="col-12">
+        <div class="card">
+            <p-panel header="Héroes" [toggleable]="true">
+                <p-table [value]="heroes" [tableStyle]="{ 'min-width': '50rem' }">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Name</th>
+                            <th>CanFly</th>
+                            <th>Color</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-hero>
+                        <tr>
+                            <td>{{ hero.name }}</td>
+                            <td>{{ hero.canFly }}</td>
+                            <td>{{ hero.color }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </p-panel>
+        </div>
+    </div>
+
     <div class="col-4">
         <p-card header="ToggleCasePipe" [style]="{'margin': '0 10px'}">
             <p class="m-0">

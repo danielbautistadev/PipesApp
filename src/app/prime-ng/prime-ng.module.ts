@@ -9,7 +9,7 @@ import { MenubarModule } from 'primeng/menubar'; // Importa el módulo MenubarMo
 import { PanelModule } from 'primeng/panel';
 import { SplitButtonModule } from 'primeng/splitbutton'; // Importa el módulo SplitButtonModule de PrimeNG para utilizar el componente SplitButton en la aplicación.
 import { ToolbarModule } from 'primeng/toolbar'; // Importa el módulo ToolbarModule de PrimeNG para utilizar el componente Toolbar en la aplicación.
-
+import { TableModule } from 'primeng/table';
 
 // El objetivo de este módulo es importar los modulos MenubarModule y MenuModule de PrimeNG y exportarlos para que puedan ser utilizados en otros módulos de la aplicación. Esto permite que los componentes Menubar y Menu estén disponibles para ser utilizados en cualquier lugar donde se importe este módulo.
 
@@ -24,6 +24,7 @@ import { ToolbarModule } from 'primeng/toolbar'; // Importa el módulo ToolbarMo
     PanelModule,
     SplitButtonModule,
     ToolbarModule,
+    TableModule
   ]
 })
 export class PrimeNgModule { }

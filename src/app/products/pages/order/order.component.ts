@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { Color, Hero } from '../../interfaces/hero.interface';
 
 @Component({
   selector: 'products-order',
@@ -11,6 +12,34 @@ export class OrderComponent implements OnInit {
   public name: string = 'erick daniel';
 
   public isUpperCase: boolean = false; // Definimos una propiedad pública que almacena un valor booleano, y lo inicializamos en false. para poder utilizarlo como argumento por el pipe toggleCase en el HTML.
+
+  public heroes: Hero[] = [
+    {
+      name: 'Superman',
+      canFly: true,
+      color: Color.blue
+    },
+    {
+      name: 'Batman',
+      canFly: false,
+      color: Color.black
+    },
+    {
+      name: 'Daredevil',
+      canFly: false,
+      color: Color.red
+    },
+    {
+      name: 'Robin',
+      canFly: false,
+      color: Color.red
+    },
+    {
+      name: 'Linterna Verde',
+      canFly: true,
+      color: Color.green
+    }
+  ]
 
   toggleUpperCase(): void {
     this.isUpperCase = !this.isUpperCase;
