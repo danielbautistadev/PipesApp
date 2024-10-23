@@ -5,14 +5,52 @@
     </p-panel>
 </div>
 <div class="grid">
+    <div class="col-12">
+        <div class="card">
+            <p-toolbar>
+                <div class="p-toolbar-group-start">
+                    <p-button 
+                        (click)="toggleUpperCase()"
+                        label="ToggleCase" 
+                        icon="pi pi-search" 
+                        class="mr-2" 
+                        styleClass="p-button-help"
+                    />
+                    <!-- Explicación: 
+                    1. El botón tiene un evento de clic (click) que llama a la función toggleUpperCase(). También podemos utilizar (onClick) en lugar de (click).
+                    2. El atributo label establece el texto que se mostrará en el botón. En este caso, se establece en "ToggleCase".
+                    3. El atributo icon establece el icono que se mostrará en el botón. En este caso, se utiliza el icono "pi pi-search" de PrimeNG. Puedes cambiarlo por cualquier otro icono de tu elección.
+                    4. La clase "mr-2" se utiliza para agregar un margen derecho al botón. Puedes ajustar el valor según tus necesidades.
+                    5. La clase "p-button-help" se utiliza para aplicar un estilo específico al botón. Puedes cambiarlo por cualquier otra clase de PrimeNG o crear una clase personalizada.
+                    -->
+                </div>
+                <div class="p-toolbar-group-end">
+                    <p-button label="por nombre" icon="pi pi-sort" class="mr-2" styleClass="p-button-success"/>
+                    <p-button label="por volar" icon="pi pi-sort" class="mr-2" styleClass="p-button-dawnger"/>
+                    <p-button label="por color" icon="pi pi-sort" styleClass="p-button-help"/>
+                </div>
+                <!-- <div class="p-toolbar-group-center">
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-search"></i>
+                        <input pInputText placeholder="Search" />
+                    </span>
+                </div>
+                <div class="p-toolbar-group-end">
+                    <p-splitButton label="Save" icon="pi pi-check" [model]="items" />
+                </div> -->
+            </p-toolbar>
+        </div>
+    </div>
+
     <div class="col-4">
         <p-card header="ToggleCasePipe" [style]="{'margin': '0 10px'}">
             <p class="m-0">
                 
             </p>
             <div class="example-1" style="background-color: rgb(0, 0, 0); padding: 8px; border-radius: 5px; text-align: center; margin-top: 10px;">
-                {{ name | toggleCase }}
+                {{ name | toggleCase:isUpperCase }}
             </div>
         </p-card>    
     </div>
+    
 </div>

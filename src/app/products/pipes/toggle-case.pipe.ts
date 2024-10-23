@@ -7,8 +7,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 
 export class ToggleCasePipe implements PipeTransform { 
-    transform(value: string): string {
-        return value.toUpperCase();
+    transform(value: string, toUpper: Boolean = false): string {
+        // console.log({args});
+        // return value.toUpperCase();
+        console.log(value, toUpper);
+        return ( toUpper ) ? value.toUpperCase() : value.toLowerCase();
     }
 }
 
